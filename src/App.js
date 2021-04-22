@@ -20,15 +20,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleClick}> Shows </button>
-        {shows ? 
-          <div>
-            <p> {person.fullName} </p> 
-            <p> {person.bio} </p> 
-            <p> {person.imgSrc} </p> 
-            <p> {person.profession} </p> 
-          </div>
-        : {}
+        <button onClick={() => {this.setState({ shows: !this.state.shows });}} > Shows </button>
+        {this.state.shows ? 
+          (<div>
+            <p> {this.state.person.fullName} </p> 
+            <p> {this.state.person.bio} </p> 
+            <p> {this.state.person.imgSrc} </p> 
+            <p> {this.state.person.profession} </p> 
+          </div>)
+        : ({})
         }
       </div>
     );
